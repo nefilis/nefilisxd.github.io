@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bromello&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>App de Ahorro</title>
+</head>
+<body>
+    <audio id="background-music" src="curtains.mp3" loop autoplay></audio>
+    <div class="container">
+        <div id="login-container">
+            <img src="cerdito.png" alt="Cerdito Ahorrador" class="cerdito">
+            <h1>Iniciar Sesión</h1>
+            <p class="message">Un centavo ahorrado es un centavo ganado</p>
+            <input type="text" id="username" placeholder="Nombre" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button id="login-button">Entrar</button>
+        </div>
+
+        <div id="options-container" style="display:none;">
+            <h1>Selecciona una Alternativa de Ahorro</h1>
+            <button class="option-button" data-goal="Viaje">Ahorro para un Viaje</button>
+            <button class="option-button" data-goal="Emergencias">Fondo de Emergencias</button>
+            <button class="option-button" data-goal="Compras">Ahorro para Compras</button>
+            <button id="custom-goal-button">Otro: Especificar objetivo</button>
+            <input type="text" id="custom-goal-input" placeholder="Escribe tu objetivo" style="display:none;">
+            <div id="advice-container" style="display:none;">
+                <p id="advice-text"></p>
+            </div>
+        </div>
+
+        <div id="goal-container" style="display:none;">
+            <h1>Establecer Objetivo</h1>
+            <p id="selected-goal"></p>
+            <input type="number" id="total-amount" placeholder="Cantidad total a ahorrar" required>
+            <input type="date" id="goal-date" required>
+            <h2>Días de la semana</h2>
+            <div class="day-inputs">
+                <label for="monday">Lunes:</label>
+                <input type="number" id="monday" placeholder="Cantidad a ahorrar">
+                <label for="tuesday">Martes:</label>
+                <input type="number" id="tuesday" placeholder="Cantidad a ahorrar">
+                <label for="wednesday">Miércoles:</label>
+                <input type="number" id="wednesday" placeholder="Cantidad a ahorrar">
+                <label for="thursday">Jueves:</label>
+                <input type="number" id="thursday" placeholder="Cantidad a ahorrar">
+                <label for="friday">Viernes:</label>
+                <input type="number" id="friday" placeholder="Cantidad a ahorrar">
+                <label for="saturday">Sábado:</label>
+                <input type="number" id="saturday" placeholder="Cantidad a ahorrar">
+                <label for="sunday">Domingo:</label>
+                <input type="number" id="sunday" placeholder="Cantidad a ahorrar">
+            </div>
+
+            <!-- Botones de Consejos y Calculadora -->
+            <button id="advice-button">Consejos de Ahorro</button>
+            <button id="calculator-button">Calculadora de Ahorro</button>
+            <div id="calculator-container" style="display:none;">
+                <h2>Calculadora de Ahorro</h2>
+                <input type="number" id="monthly-savings" placeholder="Ahorra cada mes" required>
+                <input type="number" id="months" placeholder="Número de meses" required>
+                <button id="calculate-button">Calcular</button>
+                <p id="calculation-result"></p>
+            </div>
+            <!-- Fin de botones de Consejos y Calculadora -->
+
+            <button id="save-goal-button">Guardar Objetivo</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
